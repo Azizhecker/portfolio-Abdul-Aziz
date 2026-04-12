@@ -1,5 +1,6 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer"; // Import Footer yang baru dibuat
 import AosInit from "./components/AosInit";
 
 export const metadata = {
@@ -10,10 +11,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="id">
-      <body className="bg-gray-50">
+      {/* Tambahkan flex flex-col dan min-h-screen agar footer selalu di bawah */}
+      <body className="bg-[#0A1128] flex flex-col min-h-screen">
         <AosInit />
         <Navbar />
-        <main className="pt-24">{children}</main>
+        
+        {/* flex-grow membuat main mengambil sisa ruang yang ada */}
+        <main className="flex-grow">
+          {children}
+        </main>
+        
+        <Footer />
       </body>
     </html>
   );
