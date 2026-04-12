@@ -219,7 +219,6 @@ export default function Experience() {
                       alt={cert.title} 
                       className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-transform duration-500 group-hover:scale-105 z-10" 
                     />
-                   <span className="absolute text-slate-500 text-xs italic z-0">{cert.image}</span>
                 </div>
                 
                 {/* Certificate Details */}
