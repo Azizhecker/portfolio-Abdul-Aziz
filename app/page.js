@@ -73,7 +73,7 @@ export default function Home() {
     {
       role: "Sekretaris Umum",
       org: "LDF FUAT Al Muttaqin",
-      period: "2024",
+      period: "2023",
     },
   ];
 

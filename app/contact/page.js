@@ -20,7 +20,7 @@ export default function Contact() {
     {
       title: "WhatsApp",
       subtitle: "Chat untuk respon cepat",
-      url: "https://wa.me/082164344974", // Ganti dengan wa.me/nomorkamu
+      url: "https://wa.me/qr/N2HPSSXAFEANL1", // Ganti dengan wa.me/nomorkamu
       color: "hover:border-emerald-500 hover:shadow-emerald-500/20 text-emerald-400",
       icon: (
         <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
