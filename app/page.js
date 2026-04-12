@@ -234,7 +234,7 @@ export default function Home() {
 
         {/* ================= 2. ABOUT & SKILLS SECTION ================= */}
         <section id="about" className="mt-40 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-          <div className="flex justify-center md:justify-start relative sticky top-32" data-aos="fade-right">
+          <div className="flex justify-center md:justify-start sticky top-32" data-aos="fade-right">
              <div className="absolute inset-0 bg-slate-800/80 rounded-3xl rotate-3 -z-10 scale-105 transition-transform hover:rotate-6 duration-300"></div>
             <img
               src="/Karya 3.png"
@@ -246,7 +246,7 @@ export default function Home() {
           <div data-aos="fade-left">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 tracking-tight flex items-center gap-4">
               Tentang Saya
-              <div className="h-[1px] bg-blue-800 grow opacity-50"></div>
+              <div className="h-px bg-blue-800 grow opacity-50"></div>
             </h2>
             <p className="text-slate-400 leading-relaxed mb-10 w-full text-justify md:text-left text-[1.05rem]">
               Saya seorang <strong className="text-blue-400 font-medium">IT Support</strong> dengan keahlian di bidang desain grafis, editing video, dan kameramen. 
@@ -305,7 +305,7 @@ export default function Home() {
             <p className="text-slate-400">Jejak karir dan kontribusi saya di berbagai institusi.</p>
           </div>
 
-          <div className="space-y-12 mb-20 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent">
+          <div className="space-y-12 mb-20 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-linear-to-b before:from-transparent before:via-slate-700 before:to-transparent">
             {experiences.map((exp, index) => (
               <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
                 <div className={`flex items-center justify-center w-10 h-10 rounded-full border-4 border-[#0A1128] bg-slate-800 ${exp.color} shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-xl z-10`}>
@@ -341,7 +341,7 @@ export default function Home() {
             </div>
             <div>
                <h3 className="text-2xl font-bold text-white mb-6 border-b border-slate-800 pb-3">Pencapaian</h3>
-               <div className="bg-gradient-to-br from-blue-900/40 to-slate-900 p-6 rounded-xl border border-blue-800/50">
+               <div className="bg-linear-to-br from-blue-900/40 to-slate-900 p-6 rounded-xl border border-blue-800/50">
                   <div className="text-3xl mb-3">🏆</div>
                   <h4 className="font-bold text-white text-lg mb-2">Juara 2 Lomba Desain Poster BK3N PT PIM (2025)</h4>
                   <p className="text-sm text-slate-300">Karya desain yang menonjol dalam kreativitas, pesan visual, dan kesesuaian tema lomba tingkat perusahaan.</p>
@@ -399,7 +399,7 @@ export default function Home() {
                 <div className="w-14 h-14 rounded-full bg-slate-900/80 border border-slate-800 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
                   {link.icon}
                 </div>
-                <div className="ml-5 flex-grow">
+                <div className="ml-5 grow">
                   <h3 className="text-lg font-bold text-white group-hover:text-slate-100 transition-colors">
                     {link.title}
                   </h3>
