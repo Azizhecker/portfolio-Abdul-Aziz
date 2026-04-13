@@ -23,6 +23,8 @@ export default function Home() {
       role: "Asisten KPPN Lhokseumawe (MagangHub Kemnaker)",
       company: "KPPN Lhokseumawe",
       period: "2025 – 2026",
+      // MENAMBAHKAN FOTO SAMPUL PENGALAMAN
+      image: "/images/experiences/Magang kppn.png", 
       desc: [
         "Membuat dan menyusun notulensi kegiatan kantor (Weekly Meeting, GKM, DKRO).",
         "Operator live streaming YouTube untuk Press Conference APBN dan FGD.",
@@ -83,35 +85,35 @@ export default function Home() {
       title: "Sistem Web Prediksi Tren Visual Desain Grafis",
       category: "Data Science & Web Dev",
       desc: "Penelitian Skripsi. Menggunakan metode Double Exponential Smoothing (DES) untuk memprediksi gaya visual yang berpotensi tren di masa depan.",
-      image: "/projects/skripsi.png",
+      image: "/projects/skripsi.webp",
       tags: ["Python", "Machine Learning", "Web App"],
     },
     {
       title: "UI/UX Mobile App Aksi Bantu",
       category: "UI/UX Design",
       desc: "Kompetisi GEMASTIK 2023. Merancang desain antarmuka dan pengalaman pengguna untuk aplikasi sosial.",
-      image: "/projects/aksi-bantu.png",
+      image: "/projects/aksi-bantu.webp",
       tags: ["Figma", "Prototyping", "UX Research"],
     },
     {
       title: "SIPITUNG (Sistem Informasi Penghitungan)",
       category: "Web Design",
       desc: "Desain Antarmuka Website untuk kompetisi GEMASTIK 2024.",
-      image: "/projects/sipitung.png",
+      image: "/projects/sipitung.webp",
       tags: ["UI Design", "Figma"],
     },
     {
       title: "Website Sistem Checklist Kebersihan KPPN",
       category: "Web Development",
       desc: "Sistem internal untuk CS dengan fitur laporan harian, inventaris, dan approval.",
-      image: "/projects/kppn-web.png",
+      image: "/projects/kppn-web.webp",
       tags: ["Front-End", "Database", "Dashboard"],
     },
     {
       title: "Website Monitoring Penyaluran Dana Transfer",
       category: "Web Development",
       desc: "Sistem web untuk proses penyaluran dana dari pemerintah pusat ke daerah.",
-      image: "/projects/sifrans-web.png",
+      image: "/projects/sifrans-web.webp",
       tags: ["Front-End", "Dashboard"],
     }
   ];
@@ -311,17 +313,33 @@ export default function Home() {
                 <div className={`flex items-center justify-center w-10 h-10 rounded-full border-4 border-[#0A1128] bg-slate-800 ${exp.color} shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-xl z-10`}>
                   <div className="w-3 h-3 bg-white rounded-full"></div>
                 </div>
-                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-6 rounded-2xl bg-[#111A3A]/80 border border-slate-800 hover:border-blue-500/50 transition-colors shadow-lg">
-                  <div className="flex flex-col mb-3">
-                    <span className="text-blue-400 text-sm font-bold tracking-wide">{exp.period}</span>
-                    <h3 className="text-xl font-bold text-white">{exp.role}</h3>
-                    <span className="text-slate-400 text-sm font-medium">{exp.company}</span>
+                
+                {/* PENAMBAHAN STRUKTUR UNTUK MENAMPILKAN GAMBAR SAMPUL */}
+                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] rounded-2xl bg-[#111A3A]/80 border border-slate-800 hover:border-blue-500/50 transition-colors shadow-lg overflow-hidden flex flex-col">
+                  
+                  {/* Cek apakah pengalaman ini punya gambar sampul */}
+                  {exp.image && (
+                    <div className="w-full h-64 md:h-80 bg-slate-800 border-b border-slate-800 relative group-hover:opacity-90 transition-opacity">
+                      <img 
+                        src={exp.image} 
+                        alt={exp.company} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+
+                  <div className="p-6">
+                    <div className="flex flex-col mb-3">
+                      <span className="text-blue-400 text-sm font-bold tracking-wide">{exp.period}</span>
+                      <h3 className="text-xl font-bold text-white">{exp.role}</h3>
+                      <span className="text-slate-400 text-sm font-medium">{exp.company}</span>
+                    </div>
+                    <ul className="list-disc list-outside ml-4 space-y-2 text-slate-300 text-sm">
+                      {exp.desc.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="list-disc list-outside ml-4 space-y-2 text-slate-300 text-sm">
-                    {exp.desc.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             ))}
