@@ -46,12 +46,30 @@ export default function Projects() {
 
   // ================= 2. DATA GALERI DESAIN GRAFIS =================
   const graphicDesigns = [
-    { title: "Desain Logo PKKMB UNIMAL 2025", image: "/projects/pkkmb-logo.png" },
-    { title: "Majalah Buletin KPPN Lhokseumawe", image: "/projects/buletin.png" },
-    { title: "Poster Hari Bakti Perbendaharaan ke-22", image: "/projects/poster-hbp.png" },
-    { title: "Desain Konten Instagram BEM", image: "/projects/ig-bem.png" },
-    { title: "Desain Banner Kegiatan Kampus", image: "/projects/banner-kampus.png" },
-    { title: "Logo International Conference (ICoMDEn)", image: "/projects/logo-icomden.png" },
+    { title: "Logo PKKMB UNIMAL 2025", image: "/projects/pkkmb-logo.png" },
+    { title: "Logo Warong Aceh Kupie Itam", image: "/projects/kupi.png" },
+    { title: "KPPN Lhokseumawe", image: "/projects/Artboard 2.png" },
+    { title: "Hari Imlek", image: "/projects/Artboard 33.png" },
+    { title: "Gerakan Masyarakat Sehat", image: "/projects/Artboard 1.png" },
+    { title: "Siap WBBM 2026", image: "/projects/poster A3.png" },
+    { title: "Ramadhan Kareem", image: "/projects/Artboard 444.png" },
+    { title: "Maulid Nabi Muhammad SAW", image: "/projects/11 maulid-01.png" },
+    { title: "17 Agustus", image: "/projects/17 agustus-02.png" },
+    { title: "20 Tahun Stunami Aceh", image: "/projects/20-tahun-stunami-aceh.jpg" },
+    { title: "Berbagi Takjil", image: "/projects/berbagi takjil-01.png" },
+    { title: "Sesi Dokumentasi", image: "/projects/dokumentasi expo.jpg" },
+    { title: "Family Catering", image: "/projects/family-01.png" },
+    { title: "Desain Dokumentasi", image: "/projects/dokumentasi GO UDC-01.png" },
+    { title: "G30SPKI", image: "/projects/feed-low-size_01.jpg" },
+    { title: "Hari BAtik", image: "/projects/hari batik-01.png" },
+    { title: "Hari Guru Nasional", image: "/projects/hari guru nasional 2024-01.png" },
+    { title: "Hari Pahlawan Nasional", image: "/projects/hari pahlawan 2024-01.png" },
+    { title: "Hari Idul Adha", image: "/projects/hari raya idul adha.png" },
+    { title: "Hari Santri", image: "/projects/hari santri.png" },
+    { title: "Hari Santri", image: "/projects/hari santri-01.png" },
+    { title: "Hari Sumpah Pemuda", image: "/projects/hari sumpah pemuda-01.png" },
+    { title: "Hari Veteran Nasional", image: "/projects/hari veteran baru-01.png" },
+    { title: "Kebebasan HAM", image: "/projects/Kebebasan HAM-01.png" },
   ];
 
   return (
