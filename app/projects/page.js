@@ -11,65 +11,65 @@ export default function Projects() {
       title: "Sistem Web Prediksi Tren Visual Desain Grafis",
       category: "Data Science & Web Dev",
       desc: "Penelitian Skripsi. Menggunakan metode Double Exponential Smoothing (DES) untuk memprediksi gaya visual yang berpotensi tren di masa depan.",
-      image: "/projects/skripsi.png", 
+      image: "/projects/skripsi.webp", 
       tags: ["Python", "Machine Learning", "Web App"],
     },
     {
       title: "UI/UX Mobile App Aksi Bantu",
       category: "UI/UX Design",
       desc: "Kompetisi GEMASTIK 2023. Merancang desain antarmuka dan pengalaman pengguna untuk aplikasi sosial.",
-      image: "/projects/aksi-bantu.png",
+      image: "/projects/aksi-bantu.webp",
       tags: ["Figma", "Prototyping", "UX Research"],
     },
     {
       title: "SIPITUNG (Sistem Informasi Penghitungan)",
       category: "Web Design",
       desc: "Desain Antarmuka Website untuk kompetisi GEMASTIK 2024.",
-      image: "/projects/sipitung.png",
+      image: "/projects/sipitung.webp",
       tags: ["UI Design", "Figma"],
     },
     {
       title: "Website Sistem Checklist Kebersihan KPPN",
       category: "Web Development",
       desc: "Sistem internal untuk CS dengan fitur laporan harian, inventaris, dan approval.",
-      image: "/projects/kppn-web.png",
+      image: "/projects/kppn-web.webp",
       tags: ["Front-End", "Database", "Dashboard"],
     },
     {
       title: "Website Monitoring Penyaluran Dana Transfer",
       category: "Web Development",
       desc: "Sistem web untuk proses penyaluran dana dari pemerintah pusat ke daerah.",
-      image: "/projects/sifrans-web.png",
+      image: "/projects/sifrans-web.webp",
       tags: ["Front-End", "Dashboard"],
     }
   ];
 
   // ================= 2. DATA GALERI DESAIN GRAFIS =================
   const graphicDesigns = [
-    { title: "Logo PKKMB UNIMAL 2025", image: "/projects/pkkmb-logo.png" },
-    { title: "Logo Warong Aceh Kupie Itam", image: "/projects/kupi.png" },
-    { title: "KPPN Lhokseumawe", image: "/projects/Artboard 2.png" },
-    { title: "Hari Imlek", image: "/projects/Artboard 33.png" },
-    { title: "Gerakan Masyarakat Sehat", image: "/projects/Artboard 1.png" },
-    { title: "Siap WBBM 2026", image: "/projects/poster A3.png" },
-    { title: "Ramadhan Kareem", image: "/projects/Artboard 444.png" },
-    { title: "Maulid Nabi Muhammad SAW", image: "/projects/11 maulid-01.png" },
-    { title: "17 Agustus", image: "/projects/17 agustus-02.png" },
-    { title: "20 Tahun Stunami Aceh", image: "/projects/20-tahun-stunami-aceh.jpg" },
-    { title: "Berbagi Takjil", image: "/projects/berbagi takjil-01.png" },
-    { title: "Sesi Dokumentasi", image: "/projects/dokumentasi expo.jpg" },
-    { title: "Family Catering", image: "/projects/family-01.png" },
-    { title: "Desain Dokumentasi", image: "/projects/dokumentasi GO UDC-01.png" },
-    { title: "G30SPKI", image: "/projects/feed-low-size_01.jpg" },
-    { title: "Hari BAtik", image: "/projects/hari batik-01.png" },
-    { title: "Hari Guru Nasional", image: "/projects/hari guru nasional 2024-01.png" },
-    { title: "Hari Pahlawan Nasional", image: "/projects/hari pahlawan 2024-01.png" },
-    { title: "Hari Idul Adha", image: "/projects/hari raya idul adha.png" },
-    { title: "Hari Santri", image: "/projects/hari santri.png" },
-    { title: "Hari Santri", image: "/projects/hari santri-01.png" },
-    { title: "Hari Sumpah Pemuda", image: "/projects/hari sumpah pemuda-01.png" },
-    { title: "Hari Veteran Nasional", image: "/projects/hari veteran baru-01.png" },
-    { title: "Kebebasan HAM", image: "/projects/Kebebasan HAM-01.png" },
+    { title: "Logo PKKMB UNIMAL 2025", image: "/projects/pkkmb-logo.webp" },
+    { title: "Logo Warong Aceh Kupie Itam", image: "/projects/kupi.webp" },
+    { title: "KPPN Lhokseumawe", image: "/projects/Artboard 2.webp" },
+    { title: "Hari Imlek", image: "/projects/Artboard 33.webp" },
+    { title: "Gerakan Masyarakat Sehat", image: "/projects/Artboard 1.webp" },
+    { title: "Siap WBBM 2026", image: "/projects/poster A3.webp" },
+    { title: "Ramadhan Kareem", image: "/projects/Artboard 444.webp" },
+    { title: "Maulid Nabi Muhammad SAW", image: "/projects/11 maulid-01.webp" },
+    { title: "17 Agustus", image: "/projects/17 agustus-02.webp" },
+    { title: "20 Tahun Stunami Aceh", image: "/projects/20-tahun-stunami-aceh.webp" },
+    { title: "Berbagi Takjil", image: "/projects/berbagi takjil-01.webp" },
+    { title: "Sesi Dokumentasi", image: "/projects/dokumentasi expo.webp" },
+    { title: "Family Catering", image: "/projects/family-01.webp" },
+    { title: "Desain Dokumentasi", image: "/projects/dokumentasi GO UDC-01.webp" },
+    { title: "G30SPKI", image: "/projects/feed-low-size_01.webp" },
+    { title: "Hari BAtik", image: "/projects/hari batik-01.webp" },
+    { title: "Hari Guru Nasional", image: "/projects/hari guru nasional 2024-01.webp" },
+    { title: "Hari Pahlawan Nasional", image: "/projects/hari pahlawan 2024-01.webp" },
+    { title: "Hari Idul Adha", image: "/projects/hari raya idul adha.webp" },
+    { title: "Hari Santri", image: "/projects/hari santri.webp" },
+    { title: "Hari Santri", image: "/projects/hari santri-01.webp" },
+    { title: "Hari Sumpah Pemuda", image: "/projects/hari sumpah pemuda-01.webp" },
+    { title: "Hari Veteran Nasional", image: "/projects/hari veteran baru-01.webp" },
+    { title: "Kebebasan HAM", image: "/projects/Kebebasan HAM-01.webp" },
   ];
 
   return (
@@ -132,6 +132,7 @@ export default function Projects() {
                 <img 
                   src={design.image} 
                   alt={design.title} 
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 
