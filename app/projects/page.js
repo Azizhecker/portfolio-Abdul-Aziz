@@ -41,6 +41,13 @@ export default function Projects() {
       desc: "Sistem web untuk proses penyaluran dana dari pemerintah pusat ke daerah.",
       image: "/projects/sifrans-web.webp",
       tags: ["Front-End", "Dashboard"],
+    },
+    {
+      title: "Website Monitoring Notula KPPN Lhokseumawe",
+      category: "Web Development",
+      desc: "Sistem web untuk memonitor pekerjaan notula karyawan kppn lhokseumawe.",
+      image: "/projects/website-notula.png",
+      tags: ["Front-End", "Backend", "Dashboard"],
     }
   ];
 
