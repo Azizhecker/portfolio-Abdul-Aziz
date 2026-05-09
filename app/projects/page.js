@@ -46,7 +46,7 @@ export default function Projects() {
       title: "Website Monitoring Notula KPPN Lhokseumawe",
       category: "Web Development",
       desc: "Sistem web untuk memonitor pekerjaan notula karyawan kppn lhokseumawe.",
-      image: "/projects/website-notula.png",
+      image: "/projects/web-notula.PNG",
       tags: ["Front-End", "Backend", "Dashboard"],
     }
   ];
