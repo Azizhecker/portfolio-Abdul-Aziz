@@ -31,7 +31,7 @@ export default function Contact() {
     {
       title: "Instagram",
       subtitle: "Portofolio visual & keseharian",
-      url: "https://www.instagram.com/azizctd?utm_source=qr",
+      url: "https://www.instagram.com/azizeskom?igsh=cGd1eTMzbzdjeDV5",
       color: "hover:border-pink-500 hover:shadow-pink-500/20 text-pink-400",
       icon: (
         <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,7 +43,7 @@ export default function Contact() {
     {
       title: "TikTok",
       subtitle: "Azizctd",
-      url: "https://www.tiktok.com/@pakwactd",
+      url: "https://www.tiktok.com/@pakwaeskom?_r=1&_t=ZS-96ZJjVb2ZtK",
       color: "hover:border-cyan-400 hover:shadow-cyan-400/20 text-white",
       icon: (
         <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
