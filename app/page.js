@@ -18,19 +18,18 @@ export default function Home() {
   ];
 
   // ================= DATA PENGALAMAN =================
-  const experiences = [
+const experiences = [
     {
       role: "Asisten KPPN Lhokseumawe (MagangHub Kemnaker)",
       company: "KPPN Lhokseumawe",
       period: "2025 – 2026",
-      // MENAMBAHKAN FOTO SAMPUL PENGALAMAN
-      image: "/images/experiences/Magang kppn.png", 
+      image: "/images/experiences/Magang kppn.png",
       desc: [
-        "Membuat dan menyusun notulensi kegiatan kantor (Weekly Meeting, GKM, DKRO).",
-        "Operator live streaming YouTube untuk Press Conference APBN dan FGD.",
-        "Mendesain media publikasi, buletin tahunan, laporan MTL, dan visual kampanye WBBM.",
-        "Membangun & maintain website checklist kebersihan CS dan Sistem Informasi Realisasi Dana Transfer.",
-        "Mengelola persiapan teknis kegiatan daring (Zoom/Streaming)."
+        "Mengembangkan & memelihara berbagai sistem web internal (Checklist CS, Monitoring Dana Transfer, Absensi, & Notula) yang terintegrasi dengan database Supabase.",
+        "Memproduksi Video Profil KPPN secara end-to-end (konsep, videografi/drone, post-production) dan menjadi fotografer utama untuk acara resmi institusi.",
+        "Mendesain media publikasi visual, konten media sosial, visual kampanye WBBM, hingga tata letak majalah buletin tahunan dan laporan MTL.",
+        "Mengelola tata teknis dan menjadi operator utama live streaming (YouTube/Zoom) untuk kegiatan Press Conference APBN, FGD, dan Treasury Awards.",
+        "Menjalankan fungsi administratif eksekutif, termasuk penyusunan notulensi rapat (Weekly Meeting, GKM) dan bertugas aktif dalam briefing operasional kantor."
       ],
       color: "border-blue-500",
     },
