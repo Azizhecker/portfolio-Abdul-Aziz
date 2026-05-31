@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         
         {/* flex-grow membuat main mengambil sisa ruang yang ada */}
-        <main className="flex-grow">
+        <main className="grow">
           {children}
         </main>
         

@@ -68,22 +68,28 @@ const experiences = [
 
   const certificates = [
     {
+      title: "Sertifikat Pemagangan Posisi Asisten di KPPN Lhokseumawe",
+      issuer: "Kementerian Ketenagakerjaan Republik Indonesia",
+      year: "2026",
+      image: "/certificates/Sertifikat Magang Aziz-1.png",
+    },
+    {
       title: "Sertifikat Lomba Poster BK3N PT PIM",
       issuer: "PT Pupuk Iskandar Muda",
       year: "2025",
       image: "/certificates/Sertifikat Abdul Aziz, S.Kom-01.png",
     },
     {
-      title: "Sertifikat Authors 2nd International Conference on Multi Disciplinary Engineering (ICoMDEn)",
-      issuer: "Universitas Malikussaleh",
-      year: "2024",
-      image: "/certificates/Sertifikat Abdul Aziz, S.Kom-02.png",
-    },
-    {
       title: "Sertifikat Partisipan Lomba Poster Bulan K3 Nasional PT PIM",
       issuer: "PT Pupuk Iskandar Muda",
       year: "2025",
       image: "/certificates/Sertifikat Abdul Aziz, S.Kom-03.png",
+    },
+    {
+      title: "Sertifikat Authors 2nd International Conference on Multi Disciplinary Engineering (ICoMDEn)",
+      issuer: "Universitas Malikussaleh",
+      year: "2024",
+      image: "/certificates/Sertifikat Abdul Aziz, S.Kom-02.png",
     },
     {
       title: "Sertifikat Ketua Departemen Syiar LDK Al Kautsar Universitas Malikussaleh",
@@ -96,12 +102,6 @@ const experiences = [
       issuer: "Lembaga Dakwah Fakultas Forum Ukhuwah Aneuk Teknik (FUAT) Al-Muttaqin Universitas Malikussaleh",
       year: "2024",
       image: "/certificates/Sertifikat Abdul Aziz, S.Kom-05.png",
-    },
-    {
-      title: "Sertifikat Partisipan 3rd MICoMS 2022",
-      issuer: "Universitas Malikussaleh",
-      year: "2022",
-      image: "/certificates/Sertifikat Abdul Aziz, S.Kom-06.png",
     },
     {
       title: "Sertifikat committee the 2nd International Conference on Multi Disciplinary Engineering (ICoMDEn)",
@@ -120,6 +120,12 @@ const experiences = [
       issuer: "Universitas Malikussaleh",
       year: "2024",
       image: "/certificates/Sertifikat Abdul Aziz, S.Kom-09.png",
+    },
+    {
+      title: "Sertifikat Partisipan 3rd MICoMS 2022",
+      issuer: "Universitas Malikussaleh",
+      year: "2022",
+      image: "/certificates/Sertifikat Abdul Aziz, S.Kom-06.png",
     },
   ];
 

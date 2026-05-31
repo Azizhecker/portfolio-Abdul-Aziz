@@ -123,7 +123,7 @@ export default function Contact() {
               </div>
               
               {/* Text Container */}
-              <div className="ml-5 flex-grow">
+              <div className="ml-5 grow">
                 <h3 className="text-lg font-bold text-white group-hover:text-slate-100 transition-colors">
                   {link.title}
                 </h3>

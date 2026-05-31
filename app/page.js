@@ -18,7 +18,7 @@ export default function Home() {
   ];
 
   // ================= DATA PENGALAMAN =================
-const experiences = [
+  const experiences = [
     {
       role: "Asisten KPPN Lhokseumawe (MagangHub Kemnaker)",
       company: "KPPN Lhokseumawe",
@@ -78,44 +78,7 @@ const experiences = [
     },
   ];
 
-  // ================= DATA PROJECT =================
-  const projects = [
-    {
-      title: "Sistem Web Prediksi Tren Visual Desain Grafis",
-      category: "Data Science & Web Dev",
-      desc: "Penelitian Skripsi. Menggunakan metode Double Exponential Smoothing (DES) untuk memprediksi gaya visual yang berpotensi tren di masa depan.",
-      image: "/projects/skripsi.webp",
-      tags: ["Python", "Machine Learning", "Web App"],
-    },
-    {
-      title: "UI/UX Mobile App Aksi Bantu",
-      category: "UI/UX Design",
-      desc: "Kompetisi GEMASTIK 2023. Merancang desain antarmuka dan pengalaman pengguna untuk aplikasi sosial.",
-      image: "/projects/aksi-bantu.webp",
-      tags: ["Figma", "Prototyping", "UX Research"],
-    },
-    {
-      title: "SIPITUNG (Sistem Informasi Penghitungan)",
-      category: "Web Design",
-      desc: "Desain Antarmuka Website untuk kompetisi GEMASTIK 2024.",
-      image: "/projects/sipitung.webp",
-      tags: ["UI Design", "Figma"],
-    },
-    {
-      title: "Website Sistem Checklist Kebersihan KPPN",
-      category: "Web Development",
-      desc: "Sistem internal untuk CS dengan fitur laporan harian, inventaris, dan approval.",
-      image: "/projects/kppn-web.webp",
-      tags: ["Front-End", "Database", "Dashboard"],
-    },
-    {
-      title: "Website Monitoring Penyaluran Dana Transfer",
-      category: "Web Development",
-      desc: "Sistem web untuk proses penyaluran dana dari pemerintah pusat ke daerah.",
-      image: "/projects/sifrans-web.webp",
-      tags: ["Front-End", "Dashboard"],
-    }
-  ];
+  // Catatan: Array `projects` sudah dihapus dari sini karena sekarang kita langsung memakai link/banner di bawah.
 
   // ================= DATA KONTAK =================
   const contactLinks = [
@@ -133,7 +96,7 @@ const experiences = [
     {
       title: "WhatsApp",
       subtitle: "Chat untuk respon cepat",
-      url: "https://wa.me/082164344974",
+      url: "https://wa.me/qr/N2HPSSXAFEANL1",
       color: "hover:border-emerald-500 hover:shadow-emerald-500/20 text-emerald-400",
       icon: (
         <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -144,7 +107,7 @@ const experiences = [
     {
       title: "Instagram",
       subtitle: "Portofolio visual & keseharian",
-      url: "https://www.instagram.com/azizctd?utm_source=qr",
+      url: "https://www.instagram.com/azizeskom?igsh=cGd1eTMzbzdjeDV5",
       color: "hover:border-pink-500 hover:shadow-pink-500/20 text-pink-400",
       icon: (
         <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -156,7 +119,7 @@ const experiences = [
     {
       title: "TikTok",
       subtitle: "Azizctd",
-      url: "https://www.tiktok.com/@pakwactd",
+      url: "https://www.tiktok.com/@pakwaeskom?_r=1&_t=ZS-96ZJjVb2ZtK",
       color: "hover:border-cyan-400 hover:shadow-cyan-400/20 text-white",
       icon: (
         <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
@@ -313,7 +276,6 @@ const experiences = [
                   <div className="w-3 h-3 bg-white rounded-full"></div>
                 </div>
                 
-                {/* PENAMBAHAN STRUKTUR UNTUK MENAMPILKAN GAMBAR SAMPUL */}
                 <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] rounded-2xl bg-[#111A3A]/80 border border-slate-800 hover:border-blue-500/50 transition-colors shadow-lg overflow-hidden flex flex-col">
                   
                   {/* Cek apakah pengalaman ini punya gambar sampul */}
@@ -367,34 +329,58 @@ const experiences = [
           </div>
         </section>
 
-        {/* ================= 4. PROJECT SECTION ================= */}
+        {/* ================= 4. PROJECT SECTION (KARTU BANNER LINK) ================= */}
         <section id="projects" className="mt-40" data-aos="fade-up">
           <div className="mb-16 text-center">
             <h2 className="text-4xl font-extrabold text-white tracking-tight mb-4">Project <span className="text-blue-500">Portofolio</span></h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">Kumpulan karya terbaik saya di bidang Pengembangan Web, Desain Grafis, UI/UX, dan Analisis Data.</p>
+            <p className="text-slate-400 max-w-2xl mx-auto">Lihat kumpulan karya terbaik saya di bidang Pengembangan Web, Desain Grafis, Video Produksi, dan Analisis Data.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((proj, i) => (
-              <div key={i} className="bg-[#111A3A]/80 rounded-2xl overflow-hidden border border-slate-800 hover:border-blue-500/50 hover:-translate-y-2 transition-all duration-300 group">
-                <div className="h-48 bg-slate-800 w-full relative overflow-hidden flex items-center justify-center">
-                   <img src={proj.image} alt={proj.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <div className="p-6">
-                  <span className="text-blue-400 text-xs font-bold uppercase tracking-wider mb-2 block">{proj.category}</span>
-                  <h3 className="text-xl font-bold text-white mb-3 leading-snug">{proj.title}</h3>
-                  <p className="text-sm text-slate-400 mb-6 line-clamp-3">{proj.desc}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {proj.tags.map((tag, idx) => (
-                      <span key={idx} className="px-2 py-1 bg-slate-900/80 border border-slate-700 text-slate-300 rounded text-xs">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+          <a 
+            href="https://portfolio-abdul-aziz.vercel.app/projects" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="block bg-[#111A3A]/80 rounded-2xl overflow-hidden border border-slate-800 hover:border-blue-500/50 transition-all duration-300 group relative shadow-lg hover:shadow-blue-900/20 cursor-pointer max-w-5xl mx-auto"
+          >
+            <div className="flex flex-col md:flex-row">
+              {/* Gambar Contoh Projek (Kiri) */}
+              <div className="w-full md:w-1/2 h-64 md:h-auto bg-slate-800 relative overflow-hidden shrink-0">
+                 <img 
+                   src="/projects/web-notulasiap.PNG" 
+                   alt="Contoh Projek Website" 
+                   loading="lazy" 
+                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-transform duration-700 group-hover:scale-105" 
+                 />
+                 <div className="absolute inset-0 bg-blue-900/20 group-hover:bg-transparent transition-colors duration-300"></div>
+                 
+                 {/* Ikon panah muncul saat hover */}
+                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="bg-blue-600/90 text-white p-4 rounded-full backdrop-blur-sm shadow-xl transform scale-50 group-hover:scale-100 transition-transform duration-500">
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    </div>
+                 </div>
+              </div>
+              
+              {/* Teks Penjelasan (Kanan) */}
+              <div className="p-8 md:p-10 flex flex-col justify-center grow">
+                <span className="text-blue-400 text-sm font-bold uppercase tracking-wider mb-3 flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                  Eksplorasi Karya
+                </span>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-snug">
+                  Lihat Seluruh <span className="text-blue-400">Project Portofolio</span> Saya
+                </h3>
+                <p className="text-slate-400 mb-8 leading-relaxed">
+                  Jelajahi secara lengkap berbagai sistem website, desain UI/UX, produksi video, desain jersey, hingga puluhan galeri desain grafis yang telah saya kerjakan.
+                </p>
+                
+                <div className="inline-flex items-center text-white font-semibold group-hover:text-blue-400 transition-colors w-fit pb-1 border-b-2 border-transparent group-hover:border-blue-400">
+                  Klik untuk melihat Project
+                  <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          </a>
         </section>
 
         {/* ================= 5. KONTAK SECTION ================= */}
