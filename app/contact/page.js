@@ -65,7 +65,7 @@ export default function Contact() {
     {
       title: "LinkedIn",
       subtitle: "Koneksi profesional & karir",
-      url: "https://www.linkedin.com/in/abdul-aziz-8092b429b",
+      url: "https://www.linkedin.com/in/aziz-eskom-8092b429b",
       color: "hover:border-blue-600 hover:shadow-blue-600/20 text-blue-500",
       icon: (
         <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
