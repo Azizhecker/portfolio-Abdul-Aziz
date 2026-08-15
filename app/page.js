@@ -14,7 +14,7 @@ export default function Home() {
 
   const softwareSkills = [
     "Visual Studio Code", "Figma", "Adobe Illustrator",
-    "Adobe Photoshop", "Adobe Premiere", "Ms. Office"
+    "Adobe Photoshop", "Adobe Premiere", "Ms. Office", "Python", "MySql", "Next.js"
   ];
 
   // ================= DATA PENGALAMAN =================
