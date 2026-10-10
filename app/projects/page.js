@@ -1,14 +1,57 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+function ProjectImageSlider({ images, title, aspect = "video" }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const safeImages = Array.isArray(images) ? images.filter(Boolean) : [images].filter(Boolean);
+
+  useEffect(() => {
+    if (safeImages.length < 2) return;
+    const timer = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % safeImages.length);
+    }, 3500);
+    return () => clearInterval(timer);
+  }, [safeImages.length]);
+
+  if (!safeImages.length) return null;
+
+  return (
+    <div className={`relative w-full ${aspect === "square" ? "aspect-square" : "aspect-video"} overflow-hidden bg-slate-800`}>
+      {safeImages.map((src, index) => (
+        <img
+          key={`${src}-${index}`}
+          src={src}
+          alt={`${title} — gambar ${index + 1}`}
+          loading="lazy"
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${index === activeIndex ? "opacity-100" : "opacity-0"}`}
+        />
+      ))}
+      {safeImages.length > 1 && (
+        <>
+          <button
+            type="button"
+            aria-label="Gambar sebelumnya"
+            onClick={() => setActiveIndex((current) => (current - 1 + safeImages.length) % safeImages.length)}
+            className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/55 p-2 text-white hover:bg-black/80"
+          >‹</button>
+          <button
+            type="button"
+            aria-label="Gambar berikutnya"
+            onClick={() => setActiveIndex((current) => (current + 1) % safeImages.length)}
+            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/55 p-2 text-white hover:bg-black/80"
+          >›</button>
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-black/60 px-3 py-1 text-xs text-white">
+            {activeIndex + 1}/{safeImages.length}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
 
 export default function Projects() {
-  // State untuk menyimpan array gambar yang sedang dibuka di modal
-  const [modalImages, setModalImages] = useState(null);
-  // State untuk melacak urutan gambar yang sedang dilihat
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  // ================= 1. DATA PROYEK WEBSITE =================
   const websiteProjects = [
     {
       title: "Sistem Web Prediksi Tren Visual Desain Grafis",
@@ -16,8 +59,8 @@ export default function Projects() {
       desc: "Penelitian Skripsi. Menggunakan metode Double Exponential Smoothing (DES) untuk memprediksi gaya visual yang berpotensi tren di masa depan.",
       images: [
         "/projects/skripsi.webp", 
-        "/projects/skripsi-2.webp",
-        "/projects/skripsi-3.webp"
+        "/projects/skripsi-2.PNG",
+        "/projects/skripsi-3.png"
       ], 
       tags: ["Python", "Machine Learning", "Web App"],
     },
@@ -27,7 +70,7 @@ export default function Projects() {
       desc: "Kompetisi GEMASTIK 2023. Merancang desain antarmuka dan pengalaman pengguna untuk aplikasi sosial.",
       images: [
         "/projects/aksi-bantu.webp",
-        "/projects/aksi-bantu-2.webp"
+        "/projects/aksi-bantu-2.png"
       ],
       tags: ["Figma", "Prototyping", "UX Research"],
     },
@@ -35,35 +78,54 @@ export default function Projects() {
       title: "SIPITUNG (Sistem Informasi Penghitungan)",
       category: "Web Design",
       desc: "Desain Antarmuka Website untuk kompetisi GEMASTIK 2024.",
-      images: ["/projects/sipitung.webp"],
+      images: [
+        "/projects/sipitung.webp",
+        "/projects/dashboardsipitung-01.png",
+        "/projects/tabelsipitung.png",
+      ],
       tags: ["UI Design", "Figma"],
     },
     {
       title: "Website Sistem Checklist Kebersihan KPPN",
       category: "Web Development",
       desc: "Sistem internal untuk CS dengan fitur laporan harian, inventaris, dan approval.",
-      images: ["/projects/kppn-web.png"],
+      images: [
+        "/projects/kppn-web.png",
+        "/projects/ceklismenkeu.png",
+        "/projects/ceklismenkeu2.png"
+      ],
       tags: ["Front-End", "Database", "Dashboard"],
     },
     {
       title: "Website Monitoring Penyaluran Dana Transfer",
       category: "Web Development",
       desc: "Sistem web untuk proses penyaluran dana dari pemerintah pusat ke daerah.",
-      images: ["/projects/sifrans-web.png"],
+      images: [
+        "/projects/sifrans-web.png",
+        "/projects/sifrans-web2.png",
+        "/projects/sifrans-web3.png"
+      ],
       tags: ["Front-End", "Dashboard"],
     },
     {
       title: "Website Monitoring Notula KPPN Lhokseumawe",
       category: "Web Development",
       desc: "Sistem web untuk memonitor pekerjaan notula karyawan kppn lhokseumawe.",
-      images: ["/projects/web-notulasiap.PNG"],
+      images: [
+        "/projects/web-notulasiap.PNG",
+        "/projects/web-notulasiap2.PNG",
+        "/projects/web-notulasiap3.PNG"
+      ],
       tags: ["Front-End", "Backend", "Dashboard"],
     },
     {
       title: "Website Smart PPNPN KPPN Lhokseumawe",
       category: "Web Development",
       desc: "Sistem web untuk absensi karyawan PPNPN kppn lhokseumawe.",
-      images: ["/projects/Smartkppn.png"],
+      images: [
+        "/projects/Smartkppn.png",
+        "/projects/Smartkppn2.png"
+      ],
       tags: ["Front-End", "Backend", "Dashboard"],
     }
   ];
@@ -98,14 +160,22 @@ export default function Projects() {
 
   // ================= 4. DATA DESAIN LOGO =================
   const logoDesigns = [
-    { title: "Logo PKKMB UNIMAL 2025", image: "/projects/pkkmb-logo.webp" },
-    { title: "Logo Warong Aceh Kupie Itam", image: "/projects/kupi.webp" },
+    {
+      title: "Logo PKKMB UNIMAL 2025",
+      image: "/projects/Logopkkmb.png",
+    },
+    {
+      title: "Logo Warong Aceh Kupie Itam",
+      image: "/projects/logo kupi.png",
+    },
   ];
 
   // ================= 5. DATA GALERI DESAIN GRAFIS =================
   const graphicDesigns = [
     { title: "KPPN Lhokseumawe", image: "/projects/aceh.webp" },
     { title: "KPPN Lhokseumawe", image: "/projects/tiktoknight.webp" },
+    { title: "KPPN Lhokseumawe", image: "/projects/pkkmb-logo - Salin.webp" },
+    { title: "KPPN Lhokseumawe", image: "/projects/kupi.webp" },
     { title: "KPPN Lhokseumawe", image: "/projects/ipon.webp" },
     { title: "KPPN Lhokseumawe", image: "/projects/Artboard 2.webp" },
     { title: "Hari Imlek", image: "/projects/Artboard 33.webp" },
@@ -133,26 +203,12 @@ export default function Projects() {
     { title: "Kebebasan HAM", image: "/projects/Kebebasan HAM-01.webp" },
   ];
 
-  // --- Fungsi Modal & Slider ---
-  const openModal = (images) => {
-    setModalImages(Array.isArray(images) ? images : [images]);
-    setCurrentImageIndex(0);
-  };
-
-  const nextImage = (e) => {
-    e.stopPropagation();
-    setCurrentImageIndex((prev) => (prev + 1) % modalImages.length);
-  };
-
-  const prevImage = (e) => {
-    e.stopPropagation();
-    setCurrentImageIndex((prev) => (prev - 1 + modalImages.length) % modalImages.length);
-  };
 
   return (
-    <main className="w-full min-h-screen bg-[#0A1128] text-slate-300 pt-32 pb-20 relative">
-      <div className="max-w-7xl mx-auto px-6">
-        
+    <main className="min-h-screen bg-[#0A1128] text-white pt-24 pb-20">
+        {/* ================= 4. PROJECT SECTION (SEMUA KARYA) ================= */}
+        <section id="projects" className="mt-40" data-aos="fade-up">
+          <div className="max-w-7xl mx-auto px-0">
         {/* HEADER */}
         <div className="mb-16 text-center">
           <h1 className="text-4xl font-extrabold text-white tracking-tight mb-4">Project <span className="text-blue-500">Portofolio</span></h1>
@@ -164,31 +220,13 @@ export default function Projects() {
           <h2 className="text-2xl font-bold text-white mb-8 border-b border-slate-800 pb-3">
             Projek <span className="text-blue-500">Website & UI/UX</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-10">
             {websiteProjects.map((proj, i) => (
               <div key={i} className="bg-[#111A3A]/80 rounded-2xl overflow-hidden border border-slate-800 hover:border-blue-500/50 transition-all duration-300 group flex flex-col">
-                <div 
-                  className="h-56 bg-slate-800 w-full relative overflow-hidden flex items-center justify-center shrink-0 cursor-pointer"
-                  onClick={() => openModal(proj.images)}
-                >
-                  <img src={proj.images[0]} alt={proj.title} loading="lazy" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-transform duration-500 group-hover:scale-105" />
-                  
-                  {proj.images.length > 1 && (
-                    <div className="absolute top-3 right-3 bg-black/60 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm flex items-center gap-1">
-                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" /></svg>
-                      1/{proj.images.length}
-                    </div>
-                  )}
-
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                     <svg className="w-10 h-10 text-white drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
-                  </div>
-                </div>
-                
-                <div className="p-6 flex flex-col grow">
-                  <span className="text-blue-400 text-xs font-bold uppercase tracking-wider mb-2 block">{proj.category}</span>
-                  <h3 className="text-xl font-bold text-white mb-3 leading-snug">{proj.title}</h3>
-                  <p className="text-sm text-slate-400 mb-6 grow">{proj.desc}</p>
+                <ProjectImageSlider images={proj.images} title={proj.title} /><div className="p-8 md:p-10 flex flex-col grow">
+                  <span className="text-blue-400 text-sm font-bold uppercase tracking-wider mb-3 block">{proj.category}</span>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-snug">{proj.title}</h3>
+                  <p className="text-base md:text-lg text-slate-400 mb-7 leading-relaxed grow">{proj.desc}</p>
                   <div className="flex flex-wrap gap-2 mt-auto">
                     {proj.tags.map((tag, idx) => (
                       <span key={idx} className="px-2 py-1 bg-slate-900/80 border border-slate-700 text-slate-300 rounded text-xs">{tag}</span>
@@ -239,25 +277,11 @@ export default function Projects() {
           
           <div className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {jerseyDesigns.map((jersey, i) => (
-              <div 
-                key={i} 
-                className="min-w-[70vw] sm:min-w-[300px] md:min-w-[350px] snap-center group relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 cursor-pointer"
-                onClick={() => openModal(jersey.images)}
+              <div
+                key={i}
+                className="min-w-[70vw] sm:min-w-[300px] md:min-w-[350px] snap-center group relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700"
               >
-                <div className="aspect-square w-full relative">
-                  <img src={jersey.images[0]} alt={jersey.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100" />
-                  
-                  {jersey.images.length > 1 && (
-                    <div className="absolute top-3 right-3 bg-black/60 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm flex items-center gap-1">
-                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" /></svg>
-                      1/{jersey.images.length}
-                    </div>
-                  )}
-
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <svg className="w-10 h-10 text-white drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
-                  </div>
-                </div>
+                <ProjectImageSlider images={jersey.images} title={jersey.title} aspect="square" />
                 <div className="absolute bottom-0 inset-x-0 bg-linear-to-t from-black via-black/70 to-transparent p-4 pt-10">
                   <h3 className="text-md font-bold text-white truncate">{jersey.title}</h3>
                 </div>
@@ -277,21 +301,24 @@ export default function Projects() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
             {logoDesigns.map((logo, i) => (
-              <div 
-                key={i} 
-                className="relative group aspect-square rounded-xl overflow-hidden bg-slate-800 border border-slate-700 cursor-pointer p-4 flex items-center justify-center hover:bg-slate-700 transition-colors"
-                onClick={() => openModal(logo.image)}
+              <div
+                key={i}
+                className="relative group aspect-square rounded-xl overflow-hidden
+                bg-white border border-slate-300 p-6 flex items-center justify-center
+                hover:shadow-xl transition-all duration-300"
               >
-                <img 
-                  src={logo.image} 
-                  alt={logo.title} 
+                <img
+                  src={logo.image}
+                  alt={logo.title}
                   loading="lazy"
-                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-contain transition-transform
+                  duration-300 group-hover:scale-105"
                 />
-                
-                <div className="absolute inset-0 bg-[#0A1128]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-2 text-center">
-                  <svg className="w-6 h-6 text-white mb-2 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
-                  <h4 className="text-white text-xs font-semibold translate-y-2 group-hover:translate-y-0 transition-transform duration-300 line-clamp-2">
+
+                <div className="absolute inset-x-0 bottom-0 bg-black/75
+                opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                p-3 text-center">
+                  <h4 className="text-white text-sm font-semibold">
                     {logo.title}
                   </h4>
                 </div>
@@ -313,8 +340,7 @@ export default function Projects() {
             {graphicDesigns.map((design, i) => (
               <div 
                 key={i} 
-                className="relative group aspect-4/5 rounded-xl overflow-hidden bg-slate-800 border border-slate-700 cursor-pointer"
-                onClick={() => openModal(design.image)}
+                className="relative group aspect-4/5 rounded-xl overflow-hidden bg-slate-800 border border-slate-700"
               >
                 <img 
                   src={design.image} 
@@ -324,7 +350,7 @@ export default function Projects() {
                 />
 
                 <div className="absolute inset-0 bg-[#0A1128]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
-                  <svg className="w-8 h-8 text-white mb-2 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                  
                   <h4 className="text-white text-sm font-semibold translate-y-4 group-hover:translate-y-0 transition-transform duration-300 line-clamp-2">
                     {design.title}
                   </h4>
@@ -335,60 +361,7 @@ export default function Projects() {
         </div>
 
       </div>
-
-      {/* ================= MODAL / LIGHTBOX GAMBAR DENGAN SLIDER ================= */}
-      {modalImages && modalImages.length > 0 && (
-        <div 
-          className="fixed inset-0 z-100 flex items-center justify-center bg-black/95 p-4 backdrop-blur-md transition-opacity"
-          onClick={() => setModalImages(null)}
-        >
-          {/* Tombol Close */}
-          <button 
-            className="absolute top-6 right-6 text-white bg-slate-800/50 hover:bg-red-500 rounded-full p-2 transition-colors z-50"
-            onClick={() => setModalImages(null)}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-          </button>
-          
-          {/* Tombol Slider Kiri */}
-          {modalImages.length > 1 && (
-            <button 
-              className="absolute left-4 md:left-10 text-white bg-slate-800/50 hover:bg-blue-500 rounded-full p-3 transition-colors z-50"
-              onClick={prevImage}
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
-            </button>
-          )}
-
-          {/* Gambar Besar */}
-          <div className="relative max-w-full max-h-full flex flex-col items-center">
-            <img 
-              src={modalImages[currentImageIndex]} 
-              alt={`Preview ${currentImageIndex + 1}`} 
-              className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl animate-fade-in-up"
-              onClick={(e) => e.stopPropagation()} 
-            />
-            
-            {/* Indikator Urutan Gambar */}
-            {modalImages.length > 1 && (
-              <div className="mt-4 text-slate-300 text-sm font-medium bg-slate-900/50 px-4 py-1.5 rounded-full" onClick={(e) => e.stopPropagation()}>
-                {currentImageIndex + 1} / {modalImages.length}
-              </div>
-            )}
-          </div>
-
-          {/* Tombol Slider Kanan */}
-          {modalImages.length > 1 && (
-            <button 
-              className="absolute right-4 md:right-10 text-white bg-slate-800/50 hover:bg-blue-500 rounded-full p-3 transition-colors z-50"
-              onClick={nextImage}
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
-            </button>
-          )}
-
-        </div>
-      )}
+      </section>
 
     </main>
   );
