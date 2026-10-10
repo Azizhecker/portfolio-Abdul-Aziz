@@ -223,10 +223,7 @@ export default function Home() {
   const jerseyDesigns = [
     { 
       title: "Jersey KPPN Lhokseumawe", 
-      images: [
-        "/projects/jerseykppn.png",
-        "/projects/jerseykppn-detail.png"
-      ] 
+      images: ["/projects/jerseykppn.png"] 
     }, 
     { 
       title: "Desain Baju Kerja PT Cahaya Sawit Lestari", 
