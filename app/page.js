@@ -134,17 +134,6 @@ export default function Home() {
   // ================= 1. DATA PROYEK WEBSITE =================
   const websiteProjects = [
     {
-      title: "Sistem Web Prediksi Tren Visual Desain Grafis",
-      category: "Data Science & Web Dev",
-      desc: "Penelitian Skripsi. Menggunakan metode Double Exponential Smoothing (DES) untuk memprediksi gaya visual yang berpotensi tren di masa depan.",
-      images: [
-        "/projects/skripsi.webp", 
-        "/projects/skripsi-2.PNG",
-        "/projects/skripsi-3.png"
-      ], 
-      tags: ["Python", "Machine Learning", "Web App"],
-    },
-    {
       title: "UI/UX Mobile App Aksi Bantu",
       category: "UI/UX Design",
       desc: "Kompetisi GEMASTIK 2023. Merancang desain antarmuka dan pengalaman pengguna untuk aplikasi sosial.",
@@ -153,17 +142,6 @@ export default function Home() {
         "/projects/aksi-bantu-2.png"
       ],
       tags: ["Figma", "Prototyping", "UX Research"],
-    },
-    {
-      title: "SIPITUNG (Sistem Informasi Penghitungan)",
-      category: "Web Design",
-      desc: "Desain Antarmuka Website untuk kompetisi GEMASTIK 2024.",
-      images: [
-        "/projects/sipitung.webp",
-        "/projects/dashboardsipitung-01.png",
-        "/projects/tabelsipitung.png",
-      ],
-      tags: ["UI Design", "Figma"],
     },
     {
       title: "Website Sistem Checklist Kebersihan KPPN",
@@ -193,8 +171,8 @@ export default function Home() {
       desc: "Sistem web untuk memonitor pekerjaan notula karyawan kppn lhokseumawe.",
       images: [
         "/projects/web-notulasiap.PNG",
-        "/projects/web-notulasiap2.PNG",
-        "/projects/web-notulasiap3.PNG"
+        "/projects/web-notulasiap2.png",
+        "/projects/web-notulasiap3.png"
       ],
       tags: ["Front-End", "Backend", "Dashboard"],
     },
@@ -207,7 +185,73 @@ export default function Home() {
         "/projects/Smartkppn2.png"
       ],
       tags: ["Front-End", "Backend", "Dashboard"],
-    }
+    },
+    {
+      title: "SIPITUNG (Sistem Informasi Penghitungan)",
+      category: "Web Design",
+      desc: "Desain Antarmuka Website untuk kompetisi GEMASTIK 2024.",
+      images: [
+        "/projects/sipitung.webp",
+        "/projects/dashboardsipitung-01.png",
+        "/projects/tabelsipitung.png",
+      ],
+      tags: ["UI Design", "Figma"],
+    },
+    {
+      title: "Sistem Web Klasifikasi Kelayakan Bantuan Sosial (BANSOS)",
+      category: "Data Science & Web Development",
+      desc: "Sistem berbasis web untuk mengklasifikasikan kelayakan warga dalam menerima bantuan sosial PKH/BPNT menggunakan algoritma Naïve Bayes. Sistem dilengkapi dengan fitur prediksi kelayakan, perbandingan hasil prediksi manual dengan sistem, pembersihan data, evaluasi model, dan confusion matrix.",
+      images: [
+        "/projects/sosial.png", 
+        "/projects/sosial2.png",
+        "/projects/sosial3.png"
+      ], 
+      tags: ["Python", "Machine Learning", "Naïve Bayes", "Flask / Web App"],
+    },
+    {
+      title: "Sistem Web Klasifikasi Tingkat Kecanduan Smartphone pada Balita",
+      category: "Data Science & Web Development",
+      desc: "Proyek penelitian yang mengembangkan sistem berbasis web untuk mengklasifikasikan tingkat kecanduan smartphone pada balita berdasarkan variabel penelitian X1–X4. Sistem ini menggunakan algoritma Random Forest untuk melakukan klasifikasi ke dalam kategori rendah, sedang, dan tinggi, serta dilengkapi dengan dashboard analisis, pengelolaan dataset, evaluasi model, dan visualisasi hasil klasifikasi.",
+      images: [
+        "/projects/balita.png", 
+        "/projects/balita2.png",
+        "/projects/balita3.png"
+      ], 
+      tags: ["Python", "Machine Learning", "Random Forest", "Web App"],
+    },
+    {
+      title: "Sistem Web Prediksi Produksi Telur Bebek Menggunakan Random Forest",
+      category: "Data Science & Web Development",
+      desc: "Proyek penelitian skripsi yang mengembangkan sistem berbasis web untuk memprediksi jumlah produksi telur bebek berdasarkan faktor cuaca, populasi, pakan, dan usia bebek menggunakan algoritma Random Forest Regression. Sistem dilengkapi dengan fitur prediksi produksi, visualisasi perbandingan data aktual dan hasil prediksi, evaluasi performa model, serta analisis feature importance untuk mengetahui kontribusi setiap variabel terhadap hasil prediksi.",
+      images: [
+        "/projects/bebek.png", 
+        "/projects/bebek2.png",
+        "/projects/bebek3.png"
+      ], 
+      tags: ["Python", "Machine Learning", "Random Forest Regression", "Web App"],
+    },
+    {
+      title: "Sistem Web Prediksi Kelulusan Mahasiswa Menggunakan SVM-PSO",
+      category: "Data Science & Web Development",
+      desc: "Proyek penelitian yang mengembangkan sistem berbasis web untuk memprediksi potensi keterlambatan kelulusan mahasiswa menggunakan algoritma Support Vector Machine (SVM) yang dioptimasi dengan Particle Swarm Optimization (PSO). Sistem dilengkapi dengan dashboard analisis, pengelolaan dataset, simulasi prediksi, evaluasi model, serta visualisasi distribusi kelulusan untuk mendukung pemantauan kinerja model dan identifikasi mahasiswa yang berpotensi terlambat lulus.",
+      images: [
+        "/projects/Kelulusan.png", 
+        "/projects/Kelulusan2.png",
+        "/projects/Kelulusan3.png"
+      ], 
+      tags: ["Python", "Machine Learning", "SVM · PSO", "Web App"],
+    },
+    {
+      title: "Sistem Web Prediksi Tren Visual Desain Grafis",
+      category: "Data Science & Web Dev",
+      desc: "Penelitian Skripsi. Menggunakan metode Double Exponential Smoothing (DES) untuk memprediksi gaya visual yang berpotensi tren di masa depan.",
+      images: [
+        "/projects/skripsi.webp", 
+        "/projects/skripsi-2.PNG",
+        "/projects/skripsi-3.png"
+      ], 
+      tags: ["Python", "Machine Learning", "Web App"],
+    },
   ];
 
   // ================= 2. DATA PROYEK VIDEO (YouTube) =================
