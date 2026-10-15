@@ -242,6 +242,17 @@ export default function Home() {
       tags: ["Python", "Machine Learning", "SVM · PSO", "Web App"],
     },
     {
+      title: "Sistem Web Prediksi Produksi Kelapa Sawit Kabupaten Bireuen",
+      category: "Data Science & Web Development",
+      desc: "Proyek penelitian yang mengembangkan sistem berbasis web untuk memprediksi produksi kelapa sawit di Kabupaten Bireuen menggunakan algoritma Random Forest Regression. Prediksi dilakukan berdasarkan variabel luas lahan, curah hujan, dan umur tanaman. Sistem dilengkapi dengan pengelolaan data latih dan data uji, prediksi produksi tahun 2025, perbandingan hasil prediksi dengan data aktual, evaluasi model, serta analisis feature importance untuk mengetahui kontribusi setiap variabel terhadap hasil prediksi.",
+      images: [
+        "/projects/sawit (1).png", 
+        "/projects/sawit (2).png",
+        "/projects/sawit (3).png"
+      ], 
+      tags: ["Python", "Machine Learning", "Random Forest Regression", "Web App"],
+    },
+    {
       title: "Sistem Web Prediksi Tren Visual Desain Grafis",
       category: "Data Science & Web Dev",
       desc: "Penelitian Skripsi. Menggunakan metode Double Exponential Smoothing (DES) untuk memprediksi gaya visual yang berpotensi tren di masa depan.",
